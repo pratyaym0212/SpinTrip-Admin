@@ -57,7 +57,7 @@ const start = async () => {
 
     app.use(admin.options.rootPath, router);
     app.listen(port, () => {
-        console.log(`AdminJS available at http://localhost:${port}${admin.options.rootPath}`);
+        console.log(`AdminJS available at http://54.206.23.199:${port}${admin.options.rootPath}`);
     });
 
     
