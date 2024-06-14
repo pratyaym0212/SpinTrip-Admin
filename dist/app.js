@@ -13,6 +13,9 @@ import PricingResource from './Resources/PricingResource.js';
 import UserAdditionalResource from './Resources/UserAdditionalResources.js';
 import CustomDashboardComponent from './admin/custom.js';
 import { useTranslation } from 'adminjs'
+import BookingResource from './Resources/BookingsResources.js';
+import ChatResource from './Resources/Chat.js';
+import ListingsResource from './Resources/ListingsResources.js';
 //  const Components = {
 // // import componentLoader from './admin/component-loader.js';
 
@@ -35,7 +38,7 @@ const start = async () => {
             logo: '/Spintrip.png',
           },
         dashboard: customDashboard,
-        resources: [UserResource, CarResource, BrandResource, PricingResource, CarAdditionalResource, UserAdditionalResource],            
+        resources: [UserResource, CarResource, BrandResource, PricingResource, CarAdditionalResource, UserAdditionalResource, BookingResource, ChatResource , ListingsResource],            
         rootPath: '/admin',
       });
       

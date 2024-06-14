@@ -6,7 +6,7 @@ class Cars extends Model {}
 Cars.init(
   {
     carid: {
-      type: DataTypes.UUID,
+      type: DataTypes.STRING(36),
       primaryKey: true,
     },
     carmodel: {
@@ -34,6 +34,14 @@ Cars.init(
       allowNull: true,
     },
     Rcnumber: {
+      type: new DataTypes.STRING,
+      allowNull: true,
+    },
+    mileage: {
+      type: new DataTypes.STRING,
+      allowNull: true,
+    },
+    bodytype: {
       type: new DataTypes.STRING,
       allowNull: true,
     },

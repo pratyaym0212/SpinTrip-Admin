@@ -7,6 +7,8 @@ import Cars from '../db/Cars.js';
 import CarAdditionals from '../db/CarAdditional.js';
 import Pricings from '../db/Pricing.js';
 import Brands from '../db/Brands.js';
+import Bookings from '../db/Bookings.js';
+import Chats from '../db/Chats.js';
 //import UserResources from '../Resources/UserResources.js';
 
 //CarAdditionalsComponent();
@@ -38,6 +40,12 @@ const options = {
     },
     {
       resource: Brands,
+    },
+    {
+      resource: Bookings,
+    },
+    {
+      resource: Chats,
     },
     {   
         resource: CarAdditionals,
