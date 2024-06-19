@@ -16,6 +16,7 @@ import { useTranslation } from 'adminjs'
 import BookingResource from './Resources/BookingsResources.js';
 import ChatResource from './Resources/Chat.js';
 import ListingsResource from './Resources/ListingsResources.js';
+import TaxResource from './Resources/TaxResources.js';
 //  const Components = {
 // // import componentLoader from './admin/component-loader.js';
 
@@ -38,7 +39,7 @@ const start = async () => {
             logo: '/Spintrip.png',
           },
         dashboard: customDashboard,
-        resources: [UserResource, CarResource, BrandResource, PricingResource, CarAdditionalResource, UserAdditionalResource, BookingResource, ChatResource , ListingsResource],            
+        resources: [UserResource, CarResource, BrandResource, PricingResource, CarAdditionalResource, UserAdditionalResource, BookingResource, ChatResource , ListingsResource, TaxResource],            
         rootPath: '/admin',
       });
       
