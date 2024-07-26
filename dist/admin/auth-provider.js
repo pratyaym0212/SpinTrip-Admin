@@ -1,12 +1,26 @@
 import { DefaultAuthProvider } from 'adminjs';
 import componentLoader from './component-loader.js';
-import { Admins } from '../db/Admin.js';
+import dotenv from 'dotenv';
 import axios from 'axios';
-import  Users  from '../db/User.js';
+
+dotenv.config();
 let token;
+
+export const setToken = (token) => {
+    localStorage.setItem('authToken', token);
+};
+
+export const getToken = () => {
+    return localStorage.getItem('authToken');
+};
+
+export const removeToken = () => {
+    localStorage.removeItem('authToken');
+};
+
 const provider = new DefaultAuthProvider({
   componentLoader,
-  authenticate: async ({ email, password }) => {
+  authenticate: async ({ email, password }, { res }) => {
     try {
       const apiUrl = 'http://localhost:2000/api/admin/verify-otp';
       const postData = {
@@ -14,24 +28,17 @@ const provider = new DefaultAuthProvider({
         otp: password,
       };
       const apiResponse = await axios.post(apiUrl, postData);
-      const responseData = apiResponse.data;
-      token =  apiResponse.data.token;
-      if (token) {
-        // Authentication successful
-        return { email };
-      } else {
-        // Authentication failed
-        return null;
-      }
+      token = apiResponse.data.token;
+      console.log('Token received:', token); // Debugging log // 
+      // console.log(localStorage);
+
+      // Set the token in cookies
+      return { token };
     } catch (error) {
-      // Handle any potential errors during the authentication process
       console.error('Authentication error:', error.message);
       return null;
     }
   },
 });
-
-
-
 
 export { provider, token };

@@ -5,6 +5,7 @@ import {} from 'dotenv/config'
 const CarAdditionalResource = {  
 resource: CarAdditionals,
 options: {
+  
   actions: {
     ApproveVerification: {
       actionType: 'record',

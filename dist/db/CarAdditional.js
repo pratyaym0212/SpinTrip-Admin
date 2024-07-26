@@ -133,7 +133,8 @@ CarAdditionals.init(
       type: new DataTypes.BOOLEAN,
       allowNull: true,
     },
-
+    latitude: { type: new DataTypes.FLOAT, allowNull: true, },
+    longitude: { type: new DataTypes.FLOAT, allowNull: true, }
   },
   {
     sequelize,

@@ -5,31 +5,42 @@ class Chats extends Model {}
 
 Chats.init(
   {
-    bookingId: {
+    id: {
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
     },
+    bookingId: {
+      type: DataTypes.UUID,
+      allowNull: false,
+    },
     senderId: {
-      type: new DataTypes.UUID,
-      allowNull: true,
+      type: DataTypes.UUID,
+      allowNull: false,
     },
     receiverId: {
-      type: new DataTypes.UUID,
-      allowNull: true,
+      type: DataTypes.UUID,
+      allowNull: false,
     },
     message: {
-      type: new DataTypes.TEXT,
-      allowNull: true,
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     flagged: {
-      type: new DataTypes.BOOLEAN,
-      allowNull: true,
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
   },
   {
     sequelize,
     tableName: 'Chats',
     modelName: 'Chats',
+    timestamps: false,
   }
 );
 

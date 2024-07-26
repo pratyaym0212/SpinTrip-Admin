@@ -51,8 +51,6 @@ Listings.init(
       type: new DataTypes.TIME,
       allowNull: true,
     },
-    latitude: { type: new DataTypes.FLOAT, allowNull: true, },
-    longitude: { type: new DataTypes.FLOAT, allowNull: true, }
   },
   {
     sequelize,

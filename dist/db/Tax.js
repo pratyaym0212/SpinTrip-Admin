@@ -7,6 +7,7 @@ Taxes.init(
  { 
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   GST: { type: new DataTypes.FLOAT, defaultValue: 18 },
+  HostGST: { type: new DataTypes.FLOAT, defaultValue: 5 },
   TDS: { type: new DataTypes.FLOAT, defaultValue: 1 },
   Commission: { type: new DataTypes.FLOAT, defaultValue: 35 },
  },
